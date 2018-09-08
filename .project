@@ -30,6 +30,11 @@
 			<type>2</type>
 			<locationURI>FREERTOS_ROOT/FreeRTOS/Source</locationURI>
 		</link>
+		<link>
+			<name>msp432p4xx_driverlib.lib</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/ti8/msp432_driverlib_3_21_00_05/driverlib/ccs/msp432p4xx_driverlib.lib</locationURI>
+		</link>
 	</linkedResources>
 	<filteredResources>
 		<filter>

@@ -6,3 +6,4 @@ Release/*
 .xdchelp
 config/*
 .launches/*
+/Debug/

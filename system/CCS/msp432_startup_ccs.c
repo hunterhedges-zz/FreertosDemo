@@ -43,7 +43,6 @@ static void nmiISR(void);
 static void faultISR(void);
 static void defaultISR(void);
 
-
 /* External declaration for the reset handler that is to be called when the */
 /* processor is started                                                     */
 extern void _c_int00(void);
@@ -54,13 +53,13 @@ extern void SystemInit(void);
 /* Linker variable that marks the top of the stack. */
 extern unsigned long __STACK_END;
 
-
 /* External declarations for the FreeRTOS interrupt handlers. */
-extern void xPortSysTickHandler( void );
-extern void vPortSVCHandler( void );
-extern void xPortPendSVHandler( void );
+extern void xPortSysTickHandler(void);
+extern void vPortSVCHandler(void);
+extern void xPortPendSVHandler(void);
 
-extern void PORT1_IRQHandler( void );
+extern void button_intHandler(void);
+extern void usb_intHandler(void);
 
 /* Intrrupt vector table.  Note that the proper constructs must be placed on this to  */
 /* ensure that it ends up at physical address 0x0000.0000 or at the start of          */
@@ -102,7 +101,7 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* TA2_N ISR                 */
     defaultISR,                             /* TA3_0 ISR                 */
     defaultISR,                             /* TA3_N ISR                 */
-    defaultISR,                             /* EUSCIA0 ISR               */
+    usb_intHandler,                         /* EUSCIA0 ISR               */
     defaultISR,                             /* EUSCIA1 ISR               */
     defaultISR,                             /* EUSCIA2 ISR               */
     defaultISR,                             /* EUSCIA3 ISR               */
@@ -121,7 +120,7 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* DMA_INT2 ISR              */
     defaultISR,                             /* DMA_INT1 ISR              */
     defaultISR,                             /* DMA_INT0 ISR              */
-    PORT1_IRQHandler,                       /* PORT1 ISR                 */
+    button_intHandler,                      /* PORT1 ISR                 */
     defaultISR,                             /* PORT2 ISR                 */
     defaultISR,                             /* PORT3 ISR                 */
     defaultISR,                             /* PORT4 ISR                 */
