@@ -25,29 +25,6 @@
  * 1 tab == 4 spaces!
  */
 
-/******************************************************************************
- * This project provides two demo applications.  A simple blinky style project,
- * and a more comprehensive test and demo application.  The
- * configCREATE_SIMPLE_TICKLESS_DEMO setting (defined in FreeRTOSConfig.h) is
- * used to select between the two.  The simply blinky demo is implemented and
- * described in main_blinky.c.  The more comprehensive test and demo application
- * is implemented and described in main_full.c.
- *
- * The comprehensive demo uses FreeRTOS+CLI to create a simple command line
- * interface through a UART.
- *
- * The blinky demo uses FreeRTOS's tickless idle mode to reduce power
- * consumption.  See the notes on the web page below regarding the difference
- * in power saving that can be achieved between using the generic tickless
- * implementation (as used by the blinky demo) and a tickless implementation
- * that is tailored specifically to the MSP432.
- *
- * This file implements the code that is not demo specific.
- *
- * See http://www.FreeRTOS.org/TI_MSP432_Free_RTOS_Demo.html for instructions.
- *
- */
-
 /* Standard includes. */
 #include <stdio.h>
 
@@ -57,21 +34,12 @@
 
 /*-----------------------------------------------------------*/
 
-/* NOTE: If an IAR build results in an undefined "reference to __write" linker
-error then set the printf formatter project option to "tiny" and the scanf
-formatter project option to "small". */
-
 /*
  * Set up the hardware ready to run this demo.
  */
 static void prvSetupHardware( void );
 
-/*
- * main_blinky() is used when configCREATE_SIMPLE_TICKLESS_DEMO is set to 1.
- * main_full() is used when configCREATE_SIMPLE_TICKLESS_DEMO is set to 0.
- */
-extern void main_blinky( void );
-extern void main_full( void );
+extern void main_demo( void );
 
 /*-----------------------------------------------------------*/
 
@@ -82,17 +50,7 @@ int main( void )
 	/* Prepare the hardware to run this demo. */
 	prvSetupHardware();
 
-	/* The configCREATE_SIMPLE_TICKLESS_DEMO setting is described at the top
-	of this file. */
-	#if( configCREATE_SIMPLE_TICKLESS_DEMO == 1 )
-	{
-		main_blinky();
-	}
-	#else
-	{
-		main_full();
-	}
-	#endif
+	main_demo();
 
 	return 0;
 }
@@ -101,10 +59,6 @@ int main( void )
 static void prvSetupHardware( void )
 {
 extern void FPU_enableModule( void );
-
-	/* The clocks are not configured here, but inside main_full() and
-	main_blinky() as the full demo uses a fast clock and the blinky demo uses
-	a slow clock. */
 
 	/* Stop the watchdog timer. */
 	MAP_WDT_A_holdTimer();

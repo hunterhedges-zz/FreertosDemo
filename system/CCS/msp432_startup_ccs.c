@@ -60,11 +60,7 @@ extern void xPortSysTickHandler( void );
 extern void vPortSVCHandler( void );
 extern void xPortPendSVHandler( void );
 
-/* External declarations for the peripheral interrupts handlers used by the
-demo application. */
-extern void vUART_Handler( void );
-extern void vT32_0_Handler( void );
-extern void vT32_1_Handler( void );
+extern void PORT1_IRQHandler( void );
 
 /* Intrrupt vector table.  Note that the proper constructs must be placed on this to  */
 /* ensure that it ends up at physical address 0x0000.0000 or at the start of          */
@@ -106,7 +102,7 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* TA2_N ISR                 */
     defaultISR,                             /* TA3_0 ISR                 */
     defaultISR,                             /* TA3_N ISR                 */
-	vUART_Handler,                        /* EUSCIA0 ISR               */
+    defaultISR,                             /* EUSCIA0 ISR               */
     defaultISR,                             /* EUSCIA1 ISR               */
     defaultISR,                             /* EUSCIA2 ISR               */
     defaultISR,                             /* EUSCIA3 ISR               */
@@ -115,8 +111,8 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* EUSCIB2 ISR               */
     defaultISR,                             /* EUSCIB3 ISR               */
     defaultISR,                             /* ADC14 ISR                 */
-	vT32_0_Handler,                         /* T32_INT1 ISR              */
-	vT32_1_Handler,                         /* T32_INT2 ISR              */
+    defaultISR,                             /* T32_INT1 ISR              */
+    defaultISR,                             /* T32_INT2 ISR              */
     defaultISR,                             /* T32_INTC ISR              */
     defaultISR,                             /* AES ISR                   */
     defaultISR,                             /* RTC ISR                   */
@@ -125,7 +121,7 @@ void (* const interruptVectors[])(void) =
     defaultISR,                             /* DMA_INT2 ISR              */
     defaultISR,                             /* DMA_INT1 ISR              */
     defaultISR,                             /* DMA_INT0 ISR              */
-	defaultISR,                             /* PORT1 ISR                 */
+    PORT1_IRQHandler,                       /* PORT1 ISR                 */
     defaultISR,                             /* PORT2 ISR                 */
     defaultISR,                             /* PORT3 ISR                 */
     defaultISR,                             /* PORT4 ISR                 */

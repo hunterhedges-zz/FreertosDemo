@@ -115,20 +115,6 @@
 							<tool id="com.ti.ccstudio.buildDefinitions.MSP432_5.2.hex.615420402" name="MSP432 Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.MSP432_5.2.hex.747780422"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP432.Debug.2017455949.Full_Demo/Standard_Demo_Tasks/IntQueue.c" name="IntQueue.c" rcbsApplicability="disable" resourcePath="Full_Demo/Standard_Demo_Tasks/IntQueue.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP432_5.2.exe.compilerDebug.1121232029.492052490">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP432_5.2.exe.compilerDebug.1121232029.492052490" name="MSP432 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP432_5.2.exe.compilerDebug.543582640">
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__C_SRCS.1370894378" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__CPP_SRCS.616861649" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__ASM_SRCS.1718924114" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__ASM2_SRCS.563565100" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP432_5.2.compiler.inputType__ASM2_SRCS"/>
-						</tool>
-						<tool command="" customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.441405388.1968322013.2014428990.1810678580" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1758765119.2002969237.1509378367.1617018210" name="Resource Custom Build Step Input Type">
-								<additionalInput kind="additionalinputdependency" paths=""/>
-							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.692569172.227479984.609265658.151605149" name="Resource Custom Build Step Output Type"/>
-						</tool>
-					</fileInfo>
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.MSP432.Debug.2017455949.1670949115" name="/" resourcePath="driverlib">
 						<toolChain id="com.ti.ccstudio.buildDefinitions.MSP432_5.2.exe.DebugToolchain.1901733313" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.MSP432_5.2.exe.DebugToolchain" unusedChildren="">
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1343457866.2103882879" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1343457866"/>

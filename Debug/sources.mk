@@ -115,10 +115,6 @@ SUBDIRS := \
 FreeRTOS_Source \
 FreeRTOS_Source/portable/CCS/ARM_CM4F \
 FreeRTOS_Source/portable/MemMang \
-Full_Demo/FreeRTOS+CLI \
-Full_Demo \
-Full_Demo/Standard_Demo_Tasks \
-SimplyBlinkyDemo \
 driverlib \
 system/CCS \
 

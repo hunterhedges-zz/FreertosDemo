@@ -1,1 +1,8 @@
-/.metadata/
+.metadata/*
+.jxbrowser-data/*
+RemoveSystemsTempFiles/*
+Debug/*
+Release/*
+.xdchelp
+config/*
+.launches/*

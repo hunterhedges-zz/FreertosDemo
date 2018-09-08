@@ -34,23 +34,6 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
-
-/* Set mainCREATE_SIMPLE_BLINKY_DEMO_ONLY to one to run the simple blinky demo,
-or 0 to run the more comprehensive test and demo application.
-
-The comprehensive demo uses FreeRTOS+CLI to create a simple command line
-interface through a UART.
-
-The blinky demo uses FreeRTOS's tickless idle mode to reduce power consumption.
-See the notes on the web page below regarding the difference in power saving
-that can be achieved between using the generic tickless implementation (as used
-by the blinky demo) and a tickless implementation that is tailored specifically
-to the MSP432.
-
-See http://www.FreeRTOS.org/TI_MSP432_Free_RTOS_Demo.html for instructions. */
-#define configCREATE_SIMPLE_TICKLESS_DEMO	1
-
-
 /*-----------------------------------------------------------
  * Application specific definitions.
  *
@@ -190,31 +173,15 @@ CLI commands. */
 	void vPreSleepProcessing( uint32_t ulExpectedIdleTime );
 	#define configPRE_SLEEP_PROCESSING( x ) vPreSleepProcessing( x )
 
-	#if configCREATE_SIMPLE_TICKLESS_DEMO == 1
+    /* Constants related to the generation of run time stats.  Run time stats
+    are gathered in the full demo, not the blinky demo. */
+    #define configGENERATE_RUN_TIME_STATS			0
+    #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()
+    #define portGET_RUN_TIME_COUNTER_VALUE()		0
 
-		/* Constants related to the generation of run time stats.  Run time stats
-		are gathered in the full demo, not the blinky demo. */
-		#define configGENERATE_RUN_TIME_STATS			0
-		#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()
-		#define portGET_RUN_TIME_COUNTER_VALUE()		0
+    /* The blinky demo can use a slow tick rate to save power. */
+    #define configTICK_RATE_HZ						( ( TickType_t ) 100 )
 
-		/* The blinky demo can use a slow tick rate to save power. */
-		#define configTICK_RATE_HZ						( ( TickType_t ) 100 )
-
-	#else
-
-		/* Constants related to the generation of run time stats.  Run time stats
-		are gathered in the full demo, not the blinky demo. */
-		void vConfigureTimerForRunTimeStats( void );
-		uint32_t ulGetRunTimeCounterValue( void );
-		#define configGENERATE_RUN_TIME_STATS	1
-		#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() vConfigureTimerForRunTimeStats()
-		#define portGET_RUN_TIME_COUNTER_VALUE() ulGetRunTimeCounterValue()
-
-		/* Some of the tests in the full demo expecte a 1ms tick rate. */
-		#define configTICK_RATE_HZ						( ( TickType_t ) 1000 )
-
-	#endif /* configCREATE_SIMPLE_TICKLESS_DEMO */
 #endif /* __IASMARM__ */
 
 #endif /* FREERTOS_CONFIG_H */
