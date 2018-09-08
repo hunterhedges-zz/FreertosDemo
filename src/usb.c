@@ -27,6 +27,7 @@
 #define TX_INTERRUPT            EUSCI_A_UART_TRANSMIT_INTERRUPT
 #define USB_UART_INT            INT_EUSCIA0
 
+#define MAX_BUFFER_SIZE         128
 #define ENTER_KEY               13
 #define BACKSPACE_KEY           8
 
@@ -100,7 +101,7 @@ void usb_taskFxn(void)
 void usb_intHandler(void)
 {
     uint32_t intStatus = UART_getEnabledInterruptStatus(USB_UART_BASE);
-    static uint8_t rxBuffer[128];
+    static uint8_t rxBuffer[MAX_BUFFER_SIZE];
     static uint8_t rxPtr = 0;
 
     if(intStatus == RX_INTERRUPT)
@@ -108,7 +109,7 @@ void usb_intHandler(void)
         UART_clearInterruptFlag(USB_UART_BASE, RX_INTERRUPT);
 
         // Command too long...
-        if(rxPtr == 128)
+        if(rxPtr == MAX_BUFFER_SIZE)
         {
             rxPtr = 0;
         }
@@ -160,7 +161,7 @@ void usb_sendBufferInReverse(uint8_t* buffer, uint8_t bufferSize)
     int i;
     for(i = bufferSize - 1; i >= 0; i--)
     {
-        if(buffer[i] > 47 && buffer[i] < 58)
+        if(buffer[i] >= '0' && buffer[i] <= '9')
         {
             UART_transmitData(USB_UART_BASE, buffer[i]);
         }

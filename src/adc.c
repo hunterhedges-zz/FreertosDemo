@@ -18,6 +18,11 @@
 #include "adc.h"
 
 /***************************
+ * File Specific Defines
+ ***************************/
+ #define MAX_BUFFER_SIZE    128
+
+/***************************
  * Intertask communication
  ***************************/
 extern QueueHandle_t usbAdcQueue;
@@ -76,21 +81,21 @@ void adc_taskFxn(void)
 {
     adc_init();
 
-    static const TickType_t tenthSecondBlock = pdMS_TO_TICKS( 500 );
-    static uint32_t values[128];
+    static const TickType_t halfSecondBlock = pdMS_TO_TICKS(500);
+    static uint32_t values[MAX_BUFFER_SIZE];
     static uint32_t ptr = 0;
 
     while(true)
     {
-        vTaskDelay(tenthSecondBlock);
+        vTaskDelay(halfSecondBlock);
 
-        if(ptr == 128)
+        if(ptr == MAX_BUFFER_SIZE)
         {
             ptr = 0;
         }
 
         values[ptr] = getSample();
-        xQueueSend(usbAdcQueue, &values[ptr], 0U );
+        xQueueSend(usbAdcQueue, &values[ptr], 0);
         ptr++;
     }
 }

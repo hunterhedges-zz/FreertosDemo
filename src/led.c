@@ -30,7 +30,7 @@ void led_taskFxn(void)
 {
     led_init();
 
-    static const TickType_t halfSecondBlock = pdMS_TO_TICKS( 500 );
+    static const TickType_t halfSecondBlock = pdMS_TO_TICKS(500);
 
     while(true)
     {
