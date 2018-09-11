@@ -1,5 +1,5 @@
 /*
- * flash_led.c
+ * led.c
  *
  *  Created on: Sep 8, 2018
  *      Author: hhedg

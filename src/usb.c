@@ -60,13 +60,9 @@ const eUSCI_UART_Config usbUARTConfig =
 void usb_init(void)
 {
     GPIO_setAsPeripheralModuleFunctionInputPin(USB_UART_PINS, PRIMARY_FUNCTION);
-
     UART_initModule(USB_UART_BASE, &usbUARTConfig);
-
     UART_enableModule(USB_UART_BASE);
-
     UART_enableInterrupt(USB_UART_BASE, RX_INTERRUPT);
-
     Interrupt_enableInterrupt(USB_UART_INT);
 }
 /*-----------------------------------------------------------*/
