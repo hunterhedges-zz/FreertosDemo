@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>FreeRTOSDemo</name>
+	<name>freertos-demo</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -26,14 +26,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>FreeRTOS_Source</name>
-			<type>2</type>
-			<locationURI>FREERTOS_ROOT/FreeRTOS/Source</locationURI>
-		</link>
-		<link>
 			<name>msp432p4xx_driverlib.lib</name>
 			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/ti8/msp432_driverlib_3_21_00_05/driverlib/ccs/msp432p4xx_driverlib.lib</locationURI>
+			<locationURI>PARENT-5-PROJECT_LOC/ti/msp432_driverlib_3_21_00_05/driverlib/MSP432P4xx/ccs/msp432p4xx_driverlib.lib</locationURI>
 		</link>
 	</linkedResources>
 	<filteredResources>
@@ -129,146 +124,11 @@
 		</filter>
 		<filter>
 			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-cpu.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-true-false-cs.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-gpio.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-interrupt.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-pcm.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-uart.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-wdt_a.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-fpu.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-timer32.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-sysctl.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>driverlib</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-flash.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
 			<name>system</name>
 			<type>9</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-CCS</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>FreeRTOS_Source/portable</name>
-			<type>9</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-MemMang</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>FreeRTOS_Source/portable</name>
-			<type>9</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-CCS</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>FreeRTOS_Source/portable/CCS</name>
-			<type>9</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-ARM_CM4F</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>FreeRTOS_Source/portable/MemMang</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-heap_4.c</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>
